@@ -8,108 +8,92 @@
     <link rel="stylesheet" type="text/css" href="./css/main.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="images/banner.jpeg">
-            <div class="overlay"></div>
-            <div class="banner-content">
-                <h1>Playlist</h1>
-                <p>
-                    Browse our library of songs and play them directly in the app.
+    <header>
+        <img src="images/banner.jpeg" alt="Music Player Logo-Banner" />
+        <section class="overlay"></section>
+        <section class="banner-content">
+            <h1>Playlist</h1>
+            <p>
+                Browse our library of songs and play them directly in the app.
+            </p>
+        </section>
+    </header>
+    <main>
+        <section class="search-box">
+            <input id ="search-input" value="" type="text" placeholder="search a song...">
+        </section>
+        <section class="playlist">
+            <div id="song-1" class="song">
+                <p class="song-order">1</p>
+                <img src="./images/play-button.png" class="playlist-play-btn" id="song-play-button-1" alt="play-playlist" />
+                <p class="song-details">
+                    Style <span class="artist">Taylor Swift</span>
                 </p>
             </div>
-        </header>
-        <main>
-            <div class="search-box">
-                <input id ="search-input" value="" type="text" placeholder="search a song...">
+            <div id="song-2" class="song">
+                <p class="song-order">2</p>
+                <img src="./images/play-button.png" class="playlist-play-btn" id="song-play-button-2" alt="play-playlist" />
+                <p class="song-details">
+                    Counting Stars <span class="artist">OneRepublic</span>
+                </p>
             </div>
-            <div class="playlist">
-                <div id="song" class="song-1">
-                    <p class="song-order">
-                        1
-                    </p>
-                    <img src="./images/play-button.png" class="playlist-play-btn song-play-button-1">
-                    <p class="song-details">
-                        Style <span class="artist">Taylor Swift</span>
-                    </p>
-                </div>
-                <div id="song" class="song-2">
-                    <p class="song-order">
-                        2
-                    </p>
-                    <img src="./images/play-button.png" class="playlist-play-btn song-play-button-2">
-                    <p class="song-details">
-                        Counting Stars <span class="artist">OneRepublic</span>
-                    </p>
-                </div>
-                <div id="song" class="song-3">
-                    <p class="song-order">
-                        3
-                    </p>
-                    <img src="./images/play-button.png" class="playlist-play-btn song-play-button-3">
-                    <p class="song-details">
-                        Sorry <span class="artist">Justin Bieber</span>
-                    </p>
-                </div>
-                <div id="song" class="song-4">
-                    <p class="song-order">
-                        4
-                    </p>
-                    <img src="./images/play-button.png" class="playlist-play-btn song-play-button-4">
-                    <p class="song-details">
-                        See You Again ft. Charlie Puth <span class="artist">Wiz Khalifa</span>
-                    </p>
-                </div>
-                <div id="song" class="song-5">
-                    <p class="song-order">
-                        5
-                    </p>
-                    <img src="./images/play-button.png" class="playlist-play-btn song-play-button-5">
-                    <p class="song-details">
-                        Sugar <span class="artist">Maroon 5</span>
-                    </p>
-                </div>
+            <div id="song-3" class="song">
+                <p class="song-order">
+                    3
+                </p>
+                <img src="./images/play-button.png" class="playlist-play-btn" id="song-play-button-3" alt="play-playlist" />
+                <p class="song-details">
+                    Sorry <span class="artist">Justin Bieber</span>
+                </p>
             </div>
-        </main>
-    </div>
+            <div id="song-4" class="song">
+                <p class="song-order">
+                    4
+                </p>
+                <img src="./images/play-button.png" class="playlist-play-btn" id="song-play-button-4" alt="play-playlist" />
+                <p class="song-details">
+                    See You Again ft. Charlie Puth <span class="artist">Wiz Khalifa</span>
+                </p>
+            </div>
+            <div id="song-5" class="song">
+                <p class="song-order">
+                    5
+                </p>
+                <img src="./images/play-button.png" class="playlist-play-btn" id="song-play-button-5" alt="play-playlist" />
+                <p class="song-details">
+                    Sugar <span class="artist">Maroon 5</span>
+                </p>
+            </div>
+        </section>
+    </main>
     <footer id="player">
-        <div class="player-controls">
-            <div class="player-controls-left">
-                <button class="player-previous-btn">
-                    <div class="player-icon-previous">
-                        <img src="images/play-previous-icon.webp">
-                    </div>
+        <section class="player-controls">
+            <aside class="player-controls-left">
+                <button class="player-btn player-previous-btn" >
+                    <img src="images/play-previous-icon.webp" alt="play-previous previous-button" class="player-icon-previous"/>
                 </button>
-                <button class="player-play-btn" data-playing="false">
-                    <div class="player-icon-play">
-                        <img src="images/play-button.png" alt="" class="player-play-btn">
-                    </div>
-                    <div class="player-icon-pause hidden">
-                        <img src="images/pause-button.png">
-                    </div>
+                <button class="player-btn main-player-btn" data-playing="false">
+                    <img src="images/play-button.png" alt="play-button player-controls" class="player-icon-play">
+                    <img src="images/pause-button.png" alt="pause-button player-controls" class="player-icon-pause hidden">
                 </button>
-                <button class="player-next-btn">
-                    <div class="player-icon-next">
-                        <img src="images/play-next-icon.webp">
-                    </div>
+                <button class="player-btn player-next-btn">
+                    <img src="images/play-next-icon.webp" class="player-icon-next">
                 </button>
-            </div>
-            <div class="player-controls-right">
-                <div class="player-info">Style - Taylor Swift
-                </div>
-                <div class="player-timeline">
+            </aside>
+            <section class="player-controls-right">
+                <section class="player-info">Style - Taylor Swift</section>
+                <section class="player-timeline">
                     <span class="player-timer player-time-current">0:00</span>
-                    <div class="player-progress">
-                        <div class="player-progress-filled"></div>
-                    </div>
+                    <section class="player-progress">
+                        <section class="player-progress-filled"></section>
+                    </section>
                     <span class="player-timer player-time-duration">0:00</span>
-                </div>
+                </section>
                 <audio src="">
                     Your browser doesn't support the audio element.
                 </audio>
-            </div>
-                
-        </div>
+            </section>
+        </section>
     </footer>
     <script src="js/main.js"></script>
 </body>

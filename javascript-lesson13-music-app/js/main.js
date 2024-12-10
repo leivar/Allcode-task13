@@ -1,8 +1,7 @@
 const audioElement = document.querySelector("audio");
-
-const playButton = document.querySelector(".player-play-btn");
 const nextButton = document.querySelector(".player-next-btn");
 const previousButton = document.querySelector(".player-previous-btn");
+const playerButton = document.querySelector(".main-player-btn");
 const playIcon = document.querySelector(".player-icon-play");
 const pauseIcon = document.querySelector(".player-icon-pause");
 const progress = document.querySelector(".player-progress");
@@ -11,16 +10,16 @@ const playerCurrentTime = document.querySelector(".player-time-current");
 const playerDuration = document.querySelector(".player-time-duration");
 const playerDisplay = document.querySelector(".player-info");
 const playList = document.querySelector(".playlist");
-const songContainer1 = document.querySelector(".song-1");
-const songContainer2 = document.querySelector(".song-2");
-const songContainer3 = document.querySelector(".song-3");
-const songContainer4 = document.querySelector(".song-4");
-const songContainer5 = document.querySelector(".song-5");
-const songPlayButton1 = document.querySelector(".song-play-button-1");
-const songPlayButton2 = document.querySelector(".song-play-button-2");
-const songPlayButton3 = document.querySelector(".song-play-button-3");
-const songPlayButton4 = document.querySelector(".song-play-button-4");
-const songPlayButton5 = document.querySelector(".song-play-button-5");
+const songContainer1 = document.getElementById("song-1");
+const songContainer2 = document.getElementById("song-2");
+const songContainer3 = document.getElementById("song-3");
+const songContainer4 = document.getElementById("song-4");
+const songContainer5 = document.getElementById("song-5");
+const songPlayButton1 = document.getElementById("song-play-button-1");
+const songPlayButton2 = document.getElementById("song-play-button-2");
+const songPlayButton3 = document.getElementById("song-play-button-3");
+const songPlayButton4 = document.getElementById("song-play-button-4");
+const songPlayButton5 = document.getElementById("song-play-button-5");
 const searchInput = document.querySelector("#search-input");
 
 const songs = [
@@ -33,6 +32,7 @@ const songs = [
 
 audioElement.src=songs[0];
 
+
 window.addEventListener("load", () => {
 
     setTimes();
@@ -44,7 +44,7 @@ window.addEventListener("load", () => {
     });
 
     audioElement.addEventListener("ended", () => {
-        playButton.dataset.playing = "false";
+        playerButton.dataset.playing = "false";
         playIcon.classList.remove("hidden");
         pauseIcon.classList.add("hidden");
         progressFilled.style.flexBasis = "0%";
@@ -53,10 +53,10 @@ window.addEventListener("load", () => {
 
     // Player Controls
 
-    playButton.addEventListener("click", () => {
-        if (playButton.dataset.playing === "false") {
+    playerButton.addEventListener("click", () => {
+        if (playerButton.dataset.playing === "false") {
             playSong(audioElement);
-        } else if (playButton.dataset.playing === "true") {
+        } else{
             pauseSong(audioElement);
         }
     });
@@ -72,7 +72,7 @@ window.addEventListener("load", () => {
     function playSong(audio) {
         audio.play();
 
-        playButton.dataset.playing = "true";
+        playerButton.dataset.playing = "true";
         playIcon.classList.add("hidden");
         pauseIcon.classList.remove("hidden");
     }
@@ -80,7 +80,7 @@ window.addEventListener("load", () => {
     function pauseSong(audio) {
         audio.pause();
         
-        playButton.dataset.playing = "false";
+        playerButton.dataset.playing = "false";
         pauseIcon.classList.add("hidden");
         playIcon.classList.remove("hidden");
     }
